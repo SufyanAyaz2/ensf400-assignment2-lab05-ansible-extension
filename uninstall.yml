@@ -1,0 +1,6 @@
+- name: Play - Uninstall Nginx
+  hosts: localhost
+  become: yes
+  tasks: 
+    - name: Unnstall Nginx
+      apt: name=nginx state=absent
