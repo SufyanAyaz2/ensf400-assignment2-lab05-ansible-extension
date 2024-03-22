@@ -1,8 +1,6 @@
 import ansible_runner
-import yaml
 import os
-import sys
-import subprocess
+
 
 def playbook():
     # Setting environment variable ANSIBLE_CONFIG
