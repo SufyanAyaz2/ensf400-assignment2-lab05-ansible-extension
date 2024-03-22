@@ -7,13 +7,15 @@ def ping():
     # Setting environment variable ANSIBLE_CONFIG
     os.environ['ANSIBLE_CONFIG'] = os.path.join(os.getcwd(), 'ansible.cfg')
 
-    out, err, rc = ansible_runner.run_command(
+    # Running command to ping hosts
+    results = ansible_runner.run_command(
         executable_cmd='ansible',
-        cmdline_args=['all:localhost', '-m', 'ping'],
-        input_fd=sys.stdin,
-        output_fd=sys.stdout,
-        error_fd=sys.stderr
+        cmdline_args=['all:localhost', '-m', 'ping']
     )
+
+    output = results[0]
+
+    return output
 
 
 def main():
@@ -37,9 +39,15 @@ def main():
             else:
                 print("Information for this host has already been defined in another grouping.")
     
+    
+    # Ping the hosts and get the result
+    pingResults = ping()
+
+    # Print the results of pinging the hosts
     print("\n Ping Results:\n\n")
-    # Ping the hosts and print the result
-    ping()
+    print(pingResults)
+
+
 
 
 if __name__ == "__main__":
