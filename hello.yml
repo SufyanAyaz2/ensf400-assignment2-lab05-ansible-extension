@@ -62,7 +62,7 @@
       become: yes
     - name: Copy the Nginx config file to /etc/nginx/sites-available
       copy:
-        src: /workspaces/ensf400-assignment2-lab05-ansible-extension/nginx.cfg
+        src: ./nginx.cfg
         dest: /etc/nginx/sites-available/nginx.cfg
       become: yes
     - name: Create symlink of the config file at /etc/nginx/sites-enabled

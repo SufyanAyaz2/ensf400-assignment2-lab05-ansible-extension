@@ -12,7 +12,7 @@ services:
       - "3000:3000"  
       - "2223:2223"  
     volumes:
-      - /workspaces/ensf400-assignment2-lab05-ansible-extension/secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - ./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
 
   managedhost-app-2:
     build:
@@ -25,7 +25,7 @@ services:
       - "3001:3000"  
       - "2224:2224"  
     volumes:
-      - /workspaces/ensf400-assignment2-lab05-ansible-extension/secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - ./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
 
   managedhost-app-3:
     build:
@@ -38,4 +38,4 @@ services:
       - "3002:3000"  
       - "2225:2225"  
     volumes:
-      - /workspaces/ensf400-assignment2-lab05-ansible-extension/secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - ./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
