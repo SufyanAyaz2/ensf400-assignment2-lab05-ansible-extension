@@ -37,7 +37,7 @@ def main():
             else:
                 print("Information for this host has already been defined in another grouping.")
     
-    print()
+    print("\n Ping Results:\n\n")
     # Ping the hosts and print the result
     ping()
 
